@@ -53,6 +53,9 @@ function ba5nanas_featured_image_meta_box_callback($post) {
  */
 function ba5nanas_featured_image_save_meta_box_data($post_id) {
     global $post;
+    
+    session_start();
+    ob_start();
     /*
      * We need to verify this came from our screen and with proper authorization,
      * because the save_post action can be triggered at other times.
@@ -68,10 +71,11 @@ function ba5nanas_featured_image_save_meta_box_data($post_id) {
         $file_url = $_POST['ba5nanas_featured_image_new_field'];
 
 
-        $img = get_headers($file_url);
+        $img = @get_headers($file_url);
         if ($img['0'] != "HTTP/1.1 200 OK") {
             return;
         }
+        
         $file = pathinfo($file_url);
         $newfile = $uploads['path'] . "/" . $file['basename'];
         echo $newfile;
