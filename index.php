@@ -4,7 +4,7 @@
   Plugin Name: Ba5nanas Featured Image URL
   Plugin URI:
   Description:
-  Version: 1.0
+  Version: 1.1
   Author: Ba5nanas
   Author URI: http://themeforest.net/user/Ba5nanas
   License: GPLv3 none commerial
